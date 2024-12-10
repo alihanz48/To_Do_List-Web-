@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+        <title>İşler</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../public/css/users/edit-page.css">
+        <link rel="stylesheet" href="../../public/css/users/navbar.css">
+</head>
+
+<body>
+    <%- include('../partials/left-navbar', { companyname: logindata.companyName, groups: groups, selectid: "-3" , }) %>
+
+        <div class="content-container mt-4">
+            <div class="row">
+                <!-- Grup Düzenleme -->
+                <div class="col-md-4">
+                    <div class="form-container">
+                        <h3>Grup İsmi Düzenleme</h3>
+                        <form action="/grouprename" method="post">
+                            <div class="mb-3">
+                                <label for="group" class="form-label fw-bold">Grup İsmi:</label>
+                                <select class="form-select" name="group" id="group">
+                                    <% groups.forEach(group=> { %>
+                                        <option value="<%= group.id %>">
+                                            <%= group.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newname" class="form-label fw-bold">Yeni Grup İsmi:</label>
+                                <input type="text" class="form-control" id="newname" name="newname"
+                                    placeholder="Yeni Grup İsmi">
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Değiştir</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Grup Oluştur -->
+                <div class="col-md-4">
+                    <div class="form-container">
+                        <h3>Grup Oluştur</h3>
+                        <form action="/groupcreate" method="post">
+                            <div class="mb-3">
+                                <label for="groupname" class="form-label fw-bold">Grup İsmi:</label>
+                                <input type="text" class="form-control" id="groupname" name="groupname"
+                                    placeholder="Grup İsmi">
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Oluştur</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Grup Sil -->
+                <div class="col-md-4">
+                    <div class="form-container">
+                        <h3>Grup Sil</h3>
+                        <form action="/groupdelete" method="post">
+                            <div class="mb-3">
+                                <label for="group" class="form-label fw-bold">Grup İsmi:</label>
+                                <select class="form-select" name="group" id="group">
+                                    <% groups.forEach(group=> { %>
+                                        <option value="<%= group.id %>">
+                                            <%= group.name %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100">Sil</button>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <!-- Personel Ekle -->
+                <div class="col-md-6">
+                    <div class="form-container">
+                        <h3>Personel Ekle</h3>
+                        <% if (typeof msg !="undefined" ) { %>
+                            <div class="alert alert-<%= msg.class %>" role="alert">
+                                <%= msg.msg %>
+                            </div>
+                            <% } %>
+                                <form action="/addperson" method="post">
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label fw-bold">Personel Email:</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="ornek@gmail.com">
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100">Ekle</button>
+                                </form>
+                    </div>
+                </div>
+
+                <!-- Personel Çıkart -->
+                <div class="col-md-6">
+                    <div class="form-container">
+                        <h3>Personel Çıkart</h3>
+                        <form action="/removeperson" method="post">
+                            <div class="mb-3">
+                                <label for="userid" class="form-label fw-bold">Personel Email:</label>
+                                <select class="form-select" name="userid" id="userid">
+                                    <% users.forEach(user=> { %>
+                                        <option value="<%= user.id %>">
+                                            <%= user.username %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100">Çıkart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Bilgi Düzenleme</title>
+    <link rel="stylesheet" href="../../public/css/users/work-edit.css">
+    <link rel="stylesheet" href="../../public/css/users/navbar.css">
+</head>
+<body>
+    <!-- Sol menü -->
+    <%- include('../partials/left-navbar', {
+        companyname: logindata.companyName,
+        groups: groups,
+        selectid: "-4",
+    }) %>
+    <div class="form-container">
+        <h2 class="form-header">İş Ekle</h2>
+        <form method="post">
+            <!-- İsim -->
+            <div class="mb-3">
+                <label for="isim" class="form-label">İsim</label>
+                <input type="text" class="form-control" id="isim" name="isim" placeholder="İsminizi giriniz">
+            </div>
+            <!-- İletişim -->
+            <div class="mb-3">
+                <label for="iletisim" class="form-label">İletişim</label>
+                <input type="tel" class="form-control" id="iletisim" name="iletisim" placeholder="Telefon numaranızı giriniz">
+            </div>
+            <!-- Açıklama -->
+            <div class="mb-3">
+                <label for="aciklama" class="form-label">Açıklama</label>
+                <textarea class="form-control" id="aciklama" name="aciklama" rows="3" placeholder="Açıklama yazınız"></textarea>
+            </div>
+            <!-- Adres -->
+            <div class="mb-3">
+                <label for="adres" class="form-label">Adres</label>
+                <input type="text" class="form-control" id="adres" name="adres" placeholder="Adresinizi giriniz">
+            </div>
+            <!-- Grup (ComboBox) -->
+            <div class="mb-3">
+                <label for="grup" class="form-label">Grup</label>
+                <select class="form-select" id="grup" name="grup" required>
+                <option value="1">null</option>
+                    <% groups.forEach(group => { %>
+                        <option value="<%= group.id %>"><%= group.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <!-- Düzenle Butonu -->
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

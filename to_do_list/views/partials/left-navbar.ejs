@@ -1,0 +1,60 @@
+<div class="navbar-left bg-light shadow p-3" style="width: 250px; height: 100vh; position: fixed;">
+    <!-- Navbar Header -->
+    <div class="navbar-header d-flex align-items-center mb-4">
+        <img src="/public/images/user/company.png" alt="company" class="me-3" style="width: 50px; height: 50px;">
+        <p class="fw-bold text-primary mb-0"><%= companyname %></p>
+    </div>
+
+    <!-- Navbar List -->
+    <ul class="list-group list-unstyled">
+        <!-- Ana Sayfa -->
+        <a href="/works" class="text-decoration-none">
+            <li class="list-group-item d-flex align-items-center p-2 rounded mb-2 <%= selectid == '-1' ? 'bg-primary text-white' : 'bg-white text-dark' %>">
+                <img src="/public/images/user/home.png" alt="Ana Sayfa" style="width: 20px; height: 20px;">
+                <span class="ms-3">Ana Sayfa</span>
+            </li>
+        </a>
+
+        <!-- Tamamlanan İşler -->
+        <a href="/confworks" class="text-decoration-none">
+            <li class="list-group-item d-flex align-items-center p-2 rounded mb-2 <%= selectid == '-2' ? 'bg-primary text-white' : 'bg-white text-dark' %>">
+                <img src="/public/images/user/conf.png" alt="Tamamlanan İşler" style="width: 20px; height: 20px;">
+                <span class="ms-3">Tamamlanan İşler</span>
+            </li>
+        </a>
+
+        <!-- Düzenlemeler -->
+        <a href="/person-edit" class="text-decoration-none">
+            <li class="list-group-item d-flex align-items-center p-2 rounded mb-2 <%= selectid == '-3' ? 'bg-primary text-white' : 'bg-white text-dark' %>">
+                <img src="/public/images/user/person-edit.png" alt="Düzenlemeler" style="width: 20px; height: 20px;">
+                <span class="ms-3">Düzenlemeler</span>
+            </li>
+        </a>
+
+        <!-- İş Ekle -->
+        <a href="/addwork" class="text-decoration-none">
+            <li class="list-group-item d-flex align-items-center p-2 rounded mb-2 <%= selectid == '-4' ? 'bg-primary text-white' : 'bg-white text-dark' %>">
+                <img src="/public/images/user/work.png" alt="İş Ekle" style="width: 20px; height: 20px;">
+                <span class="ms-3">İş Ekle</span>
+            </li>
+        </a>
+
+        <!-- Gruplar -->
+        <% groups.forEach(group => { %>
+            <a href="/groups/<%= group.id %>" class="text-decoration-none">
+                <li class="list-group-item d-flex align-items-center p-2 rounded mb-2 <%= selectid == group.id ? 'bg-primary text-white' : 'bg-white text-dark' %>">
+                    <img src="/public/images/user/group.png" alt="<%= group.name %>" style="width: 20px; height: 20px;">
+                    <span class="ms-3"><%= group.name %></span>
+                </li>
+            </a>
+        <% }) %>
+
+        <!-- Çıkış Yap -->
+        <a href="/logout" class="text-decoration-none">
+            <li class="list-group-item d-flex align-items-center p-2 rounded mb-2 <%= selectid == '-5' ? 'bg-primary text-white' : 'bg-white text-dark' %>">
+                <img src="/public/images/user/logout.png" alt="Çıkış Yap" style="width: 20px; height: 20px;">
+                <span class="ms-3">Çıkış Yap</span>
+            </li>
+        </a>
+    </ul>
+</div>

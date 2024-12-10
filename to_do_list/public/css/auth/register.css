@@ -1,0 +1,68 @@
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.register-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Genişlik arttırıldı */
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.btn-primary {
+    background-color: #0069d9;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 8px;
+}
+
+.register-container .form-check-label {
+    font-size: 0.9rem;
+}
+
+.separator {
+    position: relative;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.separator hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0;
+}
+
+.separator span {
+    background-color: #fff;
+    padding: 0 10px;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    color: #007bff;
+}

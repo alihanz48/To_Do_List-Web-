@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>Onaylananlar</title>
+    <link rel="stylesheet" href="../../public/css/users/app-main-page.css">
+    <link rel="stylesheet" href="../../public/css/users/navbar.css">
+</head>
+<body>
+       <%- include('../partials/left-navbar',{
+        companyname:logindata.companyName,
+        groups:groups,
+        selectid:"-2"
+       }) %>
+
+       <div class="content-container">
+           <% works.forEach(work => { %>
+            <div class="work-item">
+               <%- include('../partials/confirm_work',{
+                   work:work
+               }) %>
+            </div>
+           <% }) %>
+       </div>
+    <script src="/libs/bootstrap/dist/js/ootstrap.bundle.min.js"></script>
+</body>
+</html>

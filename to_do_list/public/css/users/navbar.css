@@ -1,0 +1,21 @@
+.content-container {
+    padding: 20px;
+    margin-left: 240px; /* left-navbar genişliğine göre */
+}
+.navbar-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px;
+}
+.navbar-left a {
+    color: #adb5bd;
+    text-decoration: none;
+}
+.navbar-left a:hover {
+    color: #ffffff;
+}

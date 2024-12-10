@@ -1,0 +1,65 @@
+<div class="content-area">
+  <ul style="margin-top: 10px; margin-bottom: 10px;">
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/public/images/user/person.png" alt="person" style="width: 20px; height: 20px;">
+        <span style="font-size: small; font-weight: bold;">
+          <%= work.isim %>
+        </span>
+      </div>
+    </li>
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/public/images/user/phone.png" alt="phone" style="width: 20px; height: 20px;">
+        <span style="font-size: small; ">
+          <%= work.iletisim %>
+        </span>
+      </div>
+    </li>
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/public/images/user/paste.png" alt="paste" style="width: 20px; height: 20px;">
+        <span style="font-size: small;">
+          <%= work.aciklama %>
+        </span>
+      </div>
+    </li>
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/public/images/user/location.png" alt="location" style="width: 20px; height: 20px;">
+        <span style="font-size: small; text-decoration: underline;">
+          <%= work.adres %>
+        </span>
+      </div>
+    </li>
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/public/images/user/add.png" alt="add" style="width: 20px; height: 20px;">
+        <span style="font-size: small;">
+          <%= work.ekleyen %>
+        </span>
+      </div>
+    </li>
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/public/images/user/conf.png" alt="add" style="width: 20px; height: 20px;">
+        <span style="font-size: small;">
+          <%= work.onaylayan %>
+        </span>
+      </div>
+    </li>
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="/public/images/user/group.png" alt="group" style="width: 20px; height: 20px;">
+        <span style="font-size: small;">
+          <%= work['group.name'] %>
+        </span>
+      </div>
+    </li>
+    <li style="list-style: none; margin-bottom: 3px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <a class="btn btn-primary" style="margin-right: 5px;" href="/confcancel/<%= work.id %>" role="button">Onay İptal</a>
+      </div>
+    </li>
+  </ul>
+</div>

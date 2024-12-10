@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şifre Güncelleme Başarılı</title>
+  <style>
+    /* Genel Stil */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #6A11CB, #2575FC);
+      color: white;
+      text-align: center;
+    }
+
+    /* Kart Tasarımı */
+    .success-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .success-container h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .success-container p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .success-container button {
+      background: white;
+      color: #2575FC;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .success-container button:hover {
+      background: #2575FC;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .success-icon {
+      font-size: 50px;
+      color: white;
+      margin-bottom: 15px;
+      animation: pop-in 0.5s ease-out;
+    }
+
+    @keyframes pop-in {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-icon">✔</div>
+    <h1>Şifre Güncelleme Başarılı!</h1>
+    <p>Şifreniz başarıyla güncellendi. Artık yeni şifrenizle giriş yapabilirsiniz.</p>
+  </div>
+</body>
+</html>

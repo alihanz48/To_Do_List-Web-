@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+        <title>Giriş Yap - İş Takip ve Yönetim Sistemi</title>
+        <link rel="stylesheet" href="/public/css/auth/log-in.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Giriş Yap</h2>
+        <form method="POST">
+            <% if (typeof msg!="undefined") { %>
+                <div class="alert alert-<%= msg.class%>" role="alert">
+                    <%= msg.message %>
+                </div>
+                <% } %>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-posta Adresi</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="E-posta adresinizi girin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Şifre</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            placeholder="Şifrenizi girin" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+        </form>
+        <div class="mt-3 text-center">
+            <p>Hesabınız yok mu? <a href="/register">Kayıt Ol</a></p>
+            <a href="/forgotmypassword">Şifremi unuttum</a>
+        </div>
+    </div>
+
+    <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

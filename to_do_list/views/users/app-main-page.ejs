@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <title>İşler</title>
+    <link rel="stylesheet" href="../../public/css/users/app-main-page.css">
+    <link rel="stylesheet" href="../../public/css/users/navbar.css">
+</head>
+<body>
+    <!-- Sol menü -->
+    <%- include('../partials/left-navbar', {
+        companyname: logindata.companyName,
+        groups: groups,
+        selectid: "-1",
+    }) %>
+
+    <!-- Ana içerik -->
+    <div class="content-container">
+        <% works.forEach(work => { %>
+            <div class="work-item">
+                <%- include('../partials/work', {
+                    work: work,
+                    returnUrl: "/works"
+                }) %>
+            </div>
+        <% }) %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

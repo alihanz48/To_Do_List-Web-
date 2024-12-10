@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <title>Kayıt Ol - İş Takip ve Yönetim Sistemi</title>
+    <link rel="stylesheet" href="../../public/css/auth/register.css">
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Kayıt Ol</h2>
+        <form method="POST">
+            <% if (typeof err!="undefined") { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= err %>
+                  </div>
+            <% } %>
+           
+            <div class="mb-3">
+                <label for="firstname" class="form-label">Ad</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Adınızı girin" required>
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Soyad</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Soyadınızı girin" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-posta Adresi</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="E-posta adresinizi girin" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Şifre</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi girin" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Şifre Tekrarı</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Şifrenizi tekrar girin" required>
+            </div>
+
+            <div class="separator">
+                <hr>
+                <span>Yöneticiler için</span>
+            </div>
+            
+            <!-- Şirket Bilgileri -->
+            <div class="mb-3">
+                <label for="companyName" class="form-label">Şirket Adı</label>
+                <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Şirket adınızı girin">
+            </div>
+            <div class="mb-3">
+                <label for="sector" class="form-label">Sektör</label>
+                <input type="text" class="form-control" id="sector" name="sector" placeholder="Şirket sektörünü girin">
+            </div>
+            <div class="mb-3">
+                <label for="establishedYear" class="form-label">Kuruluş Yılı</label>
+                <input type="number" class="form-control" id="establishedYear" name="establishedYear" placeholder="Şirket kuruluş yılını girin">
+            </div>
+            <div class="mb-3">
+                <label for="taxNumber" class="form-label">Vergi Numarası</label>
+                <input type="text" class="form-control" id="taxNumber" name="taxNumber" placeholder="Vergi numaranızı girin">
+            </div>
+            <div class="mb-3">
+                <label for="registrationNumber" class="form-label">Sicil Numarası</label>
+                <input type="text" class="form-control" id="registrationNumber" name="registrationNumber" placeholder="Sicil numaranızı girin">
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+        </form>
+        <div class="mt-3 text-center">
+            <p>Zaten hesabınız var mı? <a href="/login">Giriş Yap</a></p>
+        </div>
+    </div>
+
+    <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
